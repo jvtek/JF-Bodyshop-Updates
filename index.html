@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download JF BodyShop for Android</title>
+<style>
+  :root{--black:#070a11;--surface:#101927;--line:#24344f;--blue:#1379ed;--red:#ec193b;--muted:#93a4bb}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#f4f8ff;
+    background:radial-gradient(circle at 0% 0%,#10264a,var(--black) 60%)}
+  .card{width:100%;max-width:460px;background:var(--surface);border:1px solid var(--line);border-radius:22px;
+    padding:28px 24px;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+  .bar{height:4px;border-radius:4px;background:linear-gradient(90deg,var(--red),var(--blue));margin-bottom:22px}
+  h1{margin:0 0 6px;font-size:26px;letter-spacing:-.02em}
+  p{color:var(--muted);line-height:1.55;margin:0 0 18px}
+  .btn{display:block;text-align:center;text-decoration:none;color:#fff;background:var(--blue);
+    font-weight:800;font-size:18px;padding:16px;border-radius:14px}
+  .btn:active{background:#0c55b1}
+  .ver{text-align:center;color:var(--muted);font-size:13px;margin:10px 0 22px;min-height:18px}
+  h2{font-size:15px;margin:0 0 10px}
+  ol{margin:0;padding-left:20px;color:#d4dfef;line-height:1.7;font-size:14px}
+  .note{margin-top:20px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:13px;color:var(--muted);line-height:1.5}
+  .note strong{color:#fff}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="bar"></div>
+  <h1>JF BodyShop</h1>
+  <p>Photo and job app for your panel beater. Install it on your Android phone in a minute.</p>
+
+  <a class="btn" id="dl"
+     href="https://github.com/jvtek/JF-Bodyshop-Updates/releases/latest/download/JFSoftware-Bodyshop-App.apk">
+     Download for Android</a>
+  <div class="ver" id="ver"></div>
+
+  <h2>How to install</h2>
+  <ol>
+    <li>Tap <strong>Download for Android</strong> and wait for the file to finish.</li>
+    <li>Open the downloaded file (<em>JFSoftware-Bodyshop-App.apk</em>) from your notifications or the Downloads folder.</li>
+    <li>If Android asks, tap <strong>Settings</strong> and allow installs from your browser, then go back and tap <strong>Install</strong>.</li>
+    <li>Open <strong>JF BodyShop</strong> and sign in with the company code and login you were given.</li>
+  </ol>
+
+  <div class="note">
+    <strong>Needs Android 10 or newer.</strong> If your phone shows a Play Protect warning, tap
+    <em>More details</em> then <em>Install anyway</em>. Once installed, the app tells you when a new version is ready.
+  </div>
+</main>
+
+<script>
+  // Show the current version number when GitHub can be reached.
+  fetch('https://api.github.com/repos/jvtek/JF-Bodyshop-Updates/releases/latest')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (d && d.tag_name) document.getElementById('ver').textContent = 'Latest version: ' + d.tag_name;
+    })
+    .catch(function () {});
+</script>
+</body>
+</html>
